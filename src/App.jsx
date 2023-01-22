@@ -11,6 +11,20 @@ function App() {
   );
   const [activeNote, setActiveNote] = useState(false);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleWidtDimesion = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWidtDimesion);
+
+    return () => {
+      window.removeEventListener("resize", handleWidtDimesion);
+    };
+  }, [windowWidth]);
+
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
@@ -52,6 +66,7 @@ function App() {
         handleDelete={handleDelete}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
+        windowWidth={windowWidth}
       />
       <Main
         activeNote={displayActiveNote()}

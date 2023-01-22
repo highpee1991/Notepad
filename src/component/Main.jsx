@@ -20,6 +20,7 @@ const Main = ({ activeNote, handleUpdatedNote }) => {
           name="title"
           onChange={(e) => onEditField("title", e.target.value)}
           value={activeNote.title}
+          className="reduce-font"
         />
         <textarea
           id="body"

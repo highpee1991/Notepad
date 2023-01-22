@@ -143,3 +143,47 @@ textarea {
   font-size: 1rem;
   line-height: 2rem;
 }
+
+/* mobile responsiveness styling */
+
+.side-bar-title-shrink {
+  font-size: 0.8rem;
+  max-width: 4rem;
+}
+
+.reduce-note {
+  font-size: 0.9rem;
+}
+
+.make-padding-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reduce-input-field {
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .app-main-note-edit input,
+  textarea {
+    padding: 13px;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  textarea {
+    font-weight: 300;
+  }
+
+  .preview-title {
+    font-size: 1.2rem;
+  }
+
+  .markdown-preview {
+    padding: 0 25px 25px 25px;
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+}
